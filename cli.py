@@ -24,7 +24,6 @@ if __name__ == '__main__':
             other_player_choice = bot_player.make_move()
             print("\nOther Player's Choice:", other_player_choice)
             game.modify_array(other_player_choice)
-            game.other_player('O')
             game.turnCounter += 1
 
         winner = game.get_winner()
