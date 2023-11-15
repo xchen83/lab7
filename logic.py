@@ -6,6 +6,8 @@ class Game:
         self.cols = 3
         self.leaveLoop = False
         self.turn = 'X'
+        self.playerX = 'X'
+        self.playerO = 'O'
         self.turnCounter = 0
         self.board = self.make_empty_board()
 
@@ -38,8 +40,8 @@ class Game:
         # If there's no winner
         return "N"
 
-    def other_player(self):
-        return "O" if self.turn == "X" else "X"
+    def other_player(self, player):
+        return 'O' if player == 'X' else 'X'
 
     def modify_array(self, num):
         num -= 1
