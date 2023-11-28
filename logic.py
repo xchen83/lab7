@@ -38,8 +38,11 @@ class Game:
         # If there's no winner
         return "N"
 
-    def other_player(self, player):
-        return'O' if self.turn == 'X' else 'X'
+    def other_player(self):
+        if self.turn == 'X':
+            self.turn = 'O'
+        elif self.turn == 'O':
+            self.turn = 'X'
 
     def modify_array(self, num):
         num -= 1
@@ -62,7 +65,27 @@ class Game:
         elif num == 8:
             self.board[2][2] = self.turn
 
-
+    def choose_players():
+        while True:
+            try:
+                num_players = int(input("Enter the number of players (1 or 2): "))
+                if num_players in [1, 2]:
+                    return num_players
+                else:
+                    print("Invalid input. Please enter 1 or 2.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+    def choose_players():
+        while True:
+            try:
+                num_players = int(input("Enter the number of players (1 or 2): "))
+                if num_players in [1, 2]:
+                    return num_players
+                else:
+                    print("Invalid input. Please enter 1 or 2.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+            
 class Human(Game):
     def __init__(self):
         super().__init__()
